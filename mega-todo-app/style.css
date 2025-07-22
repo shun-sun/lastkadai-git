@@ -1,4 +1,5 @@
-body {
+/*body {
+
   font-family: sans-serif;
   background-color: white;
   color: black;
@@ -6,4 +7,74 @@ body {
 
 h1 {
   color: navy;
+}*/
+
+/* 全体の背景と文字色の調整 */
+body {
+  background-color: #121212;
+  color: #eeeeee;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* color-scheme を指定して OS に応じた調整も可能に */
+:root {
+  color-scheme: dark light;
+}
+
+/* ヘッダー内にロゴを追加 */
+header {
+  position: relative;
+  padding-left: 200px; /* ロゴ幅に応じて調整 */
+  background-color: #121212;
+}
+header::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 160px; /* ロゴ画像の横幅 */
+  height: auto;
+  background: url('../path/to/logo.png') no-repeat center/contain;
+}
+
+/* h1 の見た目調整 */
+h1 {
+  color: #eeeeee;
+  /* 必要ならフォントサイズや余白調整も */
+}
+
+/* タイトルの文言変更 */
+/* HTML 側で直接テキストを変更してください：
+   <h1>あなたのToDoリスト</h1>
+*/
+
+/* ToDo 表の締切 column を追加 */
+table.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: inherit;
+}
+
+table.todo-table th,
+table.todo-table td {
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+table.todo-table th {
+  background-color: #1e1e1e;
+  color: #eeeeee;
+}
+
+table.todo-table td {
+  background-color: #181818;
+  color: #eeeeee;
+}
+
+/* 締切日を見やすく強調 */
+table.todo-table td.deadline {
+  color: #ffcc00;
+  font-weight: bold;
 }
